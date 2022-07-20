@@ -175,13 +175,19 @@
         <h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><ul>
 <li><p>下载Git(分布式管理工具)</p>
 </li>
-<li><p>下载</p>
+<li><p>下载<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/download/">Node.js</a></p>
 <p>(一般会包括npm包管理器，若无则需另外下载)</p>
 </li>
 <li><p>个人GitHub的账户</p>
 </li>
 </ul>
-<h1 id="搭建Hexo博客框架"><a href="#搭建Hexo博客框架" class="headerlink" title="搭建Hexo博客框架"></a>搭建Hexo博客框架</h1><h2 id="步骤一：安装hexo框架"><a href="#步骤一：安装hexo框架" class="headerlink" title="步骤一：安装hexo框架"></a>步骤一：安装hexo框架</h2><p>由于本地npm安装速度较慢，故使用淘宝镜像来安装hexo框架（可选）</p>
+<br/>
+<br/>
+
+<h1 id="搭建Hexo博客框架"><a href="#搭建Hexo博客框架" class="headerlink" title="搭建Hexo博客框架"></a>搭建Hexo博客框架</h1><br/>
+<br/>
+
+<h2 id="步骤一：安装hexo框架"><a href="#步骤一：安装hexo框架" class="headerlink" title="步骤一：安装hexo框架"></a>步骤一：安装hexo框架</h2><p>由于本地npm安装速度较慢，故使用淘宝镜像来安装hexo框架（可选）</p>
 <p>&#x3D;&#x3D;不同系统不同版本，命令可能存在偏差（作者使用window系统）&#x3D;&#x3D;</p>
 <ol>
 <li><p>下载淘宝镜像。打开Git管理工具，进入个人账户下，并输入以下内容 ：</p>
@@ -194,39 +200,47 @@
 <p><code>mkdir blog</code></p>
 </li>
 <li><p>进入该文件夹下，并初始化hexo：</p>
-<p><code>cd blog</code></p>
-<p><code>hexo init</code></p>
+<p> <code>cd blog</code></p>
+<p> <code>hexo init</code></p>
 </li>
 <li><p>启动博客(默认端口：localhost:4000)：</p>
-<p><code>hexo s</code></p>
+<p> <code>hexo s</code></p>
 </li>
 <li><p>新建博客（默认会放置在：blog&#x2F;source&#x2F;_post&#x2F;目录下）：</p>
-<p><code>hexo n &quot;blog_name&quot;</code></p>
+<p> <code>hexo n &quot;blog_name&quot;</code></p>
 </li>
 <li><p>更改博客内容。【可选择vim编辑器也可直接用第三方软件(vc)打开】</p>
 </li>
 <li><p>生成博客：</p>
-<p><code>hexo clean</code></p>
-<p><code>hexo g</code></p>
+<p> <code>hexo clean</code></p>
+<p> <code>hexo g</code></p>
 </li>
 </ol>
-<h2 id="步骤二：部署Github"><a href="#步骤二：部署Github" class="headerlink" title="步骤二：部署Github"></a>步骤二：部署Github</h2><ol>
-<li><p>创建空仓库。&#x3D;&#x3D;仓库名必须为：GitHub账户名.github.io&#x3D;&#x3D; 比如作者（huangle181.github.io）</p>
+<br/>
+
+<h2 id="步骤二：部署Github"><a href="#步骤二：部署Github" class="headerlink" title="步骤二：部署Github"></a>步骤二：部署Github</h2><br/>
+
+<ol>
+<li><p>创建空仓库。 仓库名必须为：&#x3D;&#x3D;GitHub账户名.github.io&#x3D;&#x3D; 比如作者（huangle181.github.io）</p>
 </li>
 <li><p>在blog目录下安装git部署插件，方便上传到github。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd blog</span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>设置blog下_config.yml里的属性：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">	type:[空格]git</span><br><span class="line">	repo:[空格]GitHub上刚新建的仓库HTTPs地址</span><br><span class="line">	branch:[空格]main</span><br></pre></td></tr></table></figure>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">   <span class="built_in">type</span>:[空格]git</span><br><span class="line">   repo:[空格]GitHub上刚新建的仓库HTTPs地址</span><br><span class="line">   branch:[空格]main</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>将blog部署到远端</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br><span class="line">(初次部署将会提示选择输入GitHub账户密码或SSL密钥，密钥在settings/Settings Developer里获取tokens)</span><br></pre></td></tr></table></figure>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br><span class="line">(初次部署将会提示选择输入GitHub账户密码或SSL密钥，密钥在settings/Settings Developer里获取tokens)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>访问博客(比如作者)</p>
-<p><code>huangle181.github.io</code></p>
+<p> <code>huangle181.github.io</code></p>
 </li>
 </ol>
-<h2 id="步骤三：更换blog主题"><a href="#步骤三：更换blog主题" class="headerlink" title="步骤三：更换blog主题"></a>步骤三：更换blog主题</h2><ol>
+<br/>
+
+<h2 id="步骤三：更换blog主题"><a href="#步骤三：更换blog主题" class="headerlink" title="步骤三：更换blog主题"></a>步骤三：更换blog主题</h2><br/>
+
+<ol>
 <li><p>下载主题(在blog路径下操作)</p>
 <p><code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</code></p>
 </li>
@@ -238,14 +252,14 @@
 </ul>
 </li>
 <li><p>完成操作后。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean   //清处缓存</span><br><span class="line">hexo g   //生成静态文件</span><br><span class="line">hexo s   //启动服务器</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean   //清处缓存</span><br><span class="line">hexo g   //生成静态文件</span><br><span class="line">hexo s   //启动服务器</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>将更改主题操作部署到远端</p>
 <p><code>hexo d</code></p>
 </li>
 </ol>
-<h1 id="特别鸣谢"><a href="#特别鸣谢" class="headerlink" title="特别鸣谢"></a>特别鸣谢</h1><p><strong>CodeSheep up主</strong></p>
-
+<p><br/><br/><br/><br/></p>
+<h1 id="特别鸣谢"><a href="#特别鸣谢" class="headerlink" title="特别鸣谢"></a>特别鸣谢</h1><h1 id="CodeSheep-up主"><a href="#CodeSheep-up主" class="headerlink" title="CodeSheep up主"></a><strong>CodeSheep up主</strong></h1>
       
 
       
